@@ -8,14 +8,12 @@ RUN apk add --no-cache --virtual .build-deps \
         imagemagick-dev \
         libtool \
         libxml2-dev \
-        postgresql-dev \
         sqlite-dev \
     && apk add --no-cache \
         curl \
         git \
         imagemagick \
         mysql-client \
-        postgresql-libs \
         libintl \
         icu \
         icu-dev \
@@ -29,7 +27,6 @@ RUN apk add --no-cache --virtual .build-deps \
         mbstring \
         pdo \
         pdo_mysql \
-        pdo_pgsql \
         pdo_sqlite \
         pcntl \
         tokenizer \

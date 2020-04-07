@@ -1,9 +1,5 @@
-# Docker Images for Laravel development
-[![Docker Build Status](https://img.shields.io/docker/build/jguyomard/laravel-php.svg?style=flat-square)](https://hub.docker.com/r/jguyomard/laravel-php/)
-[![Docker Build Status](https://img.shields.io/docker/build/jguyomard/laravel-nginx.svg?style=flat-square)](https://hub.docker.com/r/jguyomard/laravel-nginx/)
-[![Docker Build Status](https://img.shields.io/docker/build/jguyomard/laravel-capistrano.svg?style=flat-square)](https://hub.docker.com/r/jguyomard/laravel-capistrano/)
-
-This repository provides you a development environment without requiring you to install PHP, a web server, and any other server software on your local machine. For this, it requires Docker and Docker Compose.
+# Docker Images for Laravel builds
+This repository contains a docker image for laravel builds. Php, fpm, mysql, redis installed.
 
 
 ## Installation
@@ -31,24 +27,9 @@ docker-compose exec php $yourCommandHere
 These docker images are configured in `docker-compose.yml` file.
 You can comment or uncomment some services according to your project.
 
-* [`jguyomard/laravel-php:7.3`](https://hub.docker.com/r/jguyomard/laravel-php/) (this docker image extends `php:7.3-fpm-alpine` to add some PHP extensions) ;
-* [`jguyomard/laravel-nginx:1.13`](https://hub.docker.com/r/jguyomard/laravel-nginx/) (this docker image extends `nginx:1.13-alpine` to add Laravel vhost) ;
+* [`kashifz/php-fpm-laravel-mysql-redis:7.4`](https://hub.docker.com/r/toblerone/laravel-php/) (this docker image extends `php:7.4-fpm-alpine` to add some PHP extensions) ;
 * `mysql:5.7` ;
-* `postgres:9.6-alpine` ;
 * `redis:4.0-alpine` ;
-* `elasticsearch:5.5-alpine`.
-
-
-## Other tools
-
-This repository also comes with a caspistrano docker image: [`jguyomard/laravel-capistrano:3.9`](https://hub.docker.com/r/jguyomard/laravel-capistrano/).
-
-For ease of use, you can create a bash alias:
-
-```
-alias cap='docker run --rm --user cap -v "$PWD":/src -v "$(dirname $SSH_AUTH_SOCK)":"$(dirname $SSH_AUTH_SOCK)" -e SSH_AUTH_SOCK="${SSH_AUTH_SOCK}" jguyomard/laravel-capistrano:3.9 cap'
-```
-
 
 ## Contributing
 
